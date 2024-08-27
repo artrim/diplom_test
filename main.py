@@ -1,3 +1,5 @@
+import time
+
 from src.csv_saver import csv_saver
 from src.products import Products
 
@@ -15,5 +17,7 @@ for product in products:
         "instruction": product.instruction,
         "country": product.country
     })
+    print(f'{product.url} - DONE')
+    time.sleep(0.1)
 
-csv_saver(products_list, 'result/test_products_2.csv')
+csv_saver(products_list, 'result/products.csv')
