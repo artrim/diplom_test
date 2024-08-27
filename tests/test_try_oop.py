@@ -1,5 +1,5 @@
 import pytest
-from src.try_oop import Products
+from src.products import Products
 
 
 @pytest.fixture
@@ -23,7 +23,7 @@ def test_product(product):
 
 
 def test_get_other_information_about_products(product):
-    product.get_other_information_about_products()
+    product.get_more_information_about_products()
     assert product.description == ('Аромат J.U.S напоминает о летнем дне, проведенном на берегу моря: солнечные блики '
                                    'мерцают в воде, теплый песок ощущается на коже, морской бриз несет с собой свежесть'
                                    ', а время будто остановилось. Композиция передает контраст золотого и теплого '
@@ -36,7 +36,7 @@ def test_get_other_information_about_products(product):
                               '3.8',
                               '20 313',
                               'https://goldapple.ru/28330100006-no-5-frenesie')
-    broken_product.get_other_information_about_products()
+    broken_product.get_more_information_about_products()
     assert broken_product.instruction == '-'
     assert broken_product.country == '-'
 

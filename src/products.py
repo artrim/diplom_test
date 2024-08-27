@@ -24,9 +24,6 @@ class Products:
         cls.driver.get(cls.url_gold_apple)
         scrolldown(cls.driver, 50)
         main_page_html = BeautifulSoup(cls.driver.page_source, 'lxml')
-        # driver.get(url)
-        # scrolldown(driver, 50)
-        # main_page_html = BeautifulSoup(driver.page_source, 'lxml')
 
         content = main_page_html.find('main')
         content = content.findChildren(recursive=False)[-2]
@@ -87,11 +84,10 @@ class Products:
                 print(f'Произошла ошибка: {e}')
                 continue
             finally:
-                # driver.quit()
                 cls.driver.quit()
         return all_parfumes
 
-    def get_other_information_about_products(self):
+    def get_more_information_about_products(self):
         r = requests.get(self.url)
         soup = BeautifulSoup(r.text, 'lxml')
         content = soup.find('main').find('article')

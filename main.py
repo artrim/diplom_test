@@ -1,11 +1,11 @@
 from src.csv_saver import csv_saver
-from src.try_oop import Products
+from src.products import Products
 
 products = Products.cast_to_object_list()
 
 products_list = []
 for product in products:
-    product.get_other_information_about_products()
+    product.get_more_information_about_products()
     products_list.append({
         "name": product.name,
         "rating": product.rating,
